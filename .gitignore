@@ -1,0 +1,4 @@
+/data/preprocessed_BOW/*
+/data/abstracts/*txt
+__pycache__
+.idea
