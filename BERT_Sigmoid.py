@@ -139,7 +139,7 @@ def evaluate_model(model, name="Evaluation", print_statistics=True, display_prog
             bar.update(1)
             bar.desc = f"Evaluating... Loss: {loss_avg:<.3f}"
 
-        discrete_predictions = (prediction["logits"].detach().cpu().numpy() > 0.5).astype("int64")
+        discrete_predictions = (prediction["logits"].detach().cpu().numpy() > 0).astype("int64")
 
         # In case no label was predicted, treat the label with the maximum predicted score as predicted to be true
         argmaxes = np.argmax(prediction["logits"].detach().cpu().numpy(), axis=-1)
